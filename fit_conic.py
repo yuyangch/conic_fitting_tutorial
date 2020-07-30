@@ -66,7 +66,7 @@ C_initial_9=np.matrix([[2.0],
 #C_initial_9=np.matrix()
 print C_initial_9
 
-for i in range(0,1):
+for i in range(0,2000):
 	e=J*C_initial_9
 	print "e",e
 	delta_c=(-1.0)*J.transpose()*linalg.inv(J*J.transpose())*e    #(4.11-p99) in M.G
@@ -79,4 +79,11 @@ for i in range(0,1):
 
 
 
+#rospy.init_node('listener', anonymous=True)
+point =np.matrix([[1.414],[1.414],[1.0]])
+
+#data_points.append(np.matrix([[1.414],[1.414],[1.0]]))
+error=point[0,0]*point[0,0]*C_initial_9[0,0]+point[0,0]*point[1,0]*C_initial_9[1,0]+point[0,0]*point[2,0]*C_initial_9[2,0]+point[0,0]*point[1,0]*C_initial_9[3,0]+point[1,0]*point[1,0]*C_initial_9[4,0]+point[1,0]*point[2,0]*C_initial_9[5,0]+point[0,0]*point[2,0]*C_initial_9[6,0]+point[1,0]*point[2,0]*C_initial_9[7,0]+point[2,0]*point[2,0]*C_initial_9[8,0]
+
+print "error ",error
 
