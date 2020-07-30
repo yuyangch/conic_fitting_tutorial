@@ -72,7 +72,7 @@ then the rest is the familiar scalar equation derivative quotient rules/ chains 
 
 then (for example when calculating <img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial d^{2}}{\partial C_{11}} ">)
 
-<img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial \dfrac{num}{denom}}{\partial C_{11}}=denom'=\dfrac{\partial denom}{\partial C_{21}} =8x'(x'C_{21} \oplus y'C_{22} \oplus z'C_{23}) ">
+<img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial \dfrac{num}{denom}}{\partial C_{11}}= \dfrac{denom \times num'-num\times denom'}{denom^{2}} ">
 
 
 
