@@ -49,7 +49,23 @@ The physical meaning behind this approach can be understood as minimizing,over <
 
 This is similar to Approach 1, but we are taking a different Error Function. 
 
-We need to first find the Jacobian of (4.12) (over vector <img src="https://render.githubusercontent.com/render/math?math=c">), or in this conic example, (4.12) is <img src="https://render.githubusercontent.com/render/math?math=\dfrac{(x^{T}Cx)^{2}}{4((Cx)^{2}_{1}+(Cx)^{2}_{2})}=\dfrac{num}{denom}">   ( the <img src="https://render.githubusercontent.com/render/math?math=\Delta"> equation on top of p100 ),  this is siginificantly more calculation then approach 1. If you are not totally familiar with Matrix equation derviate rules (chain rules etc) my advise is to expand the equation to its original form -- an equation of scalar  <img src="https://render.githubusercontent.com/render/math?math=C_{11},  C_{12} , C_{13} , C_{21} , C_{22} ,C_{23}, C_{31}, C_{32}, C_{33},x',y',w'">   instead of vectors and matrices
+We need to first find the Jacobian of (4.12) (over vector <img src="https://render.githubusercontent.com/render/math?math=c">), or in this conic example, (4.12) is <img src="https://render.githubusercontent.com/render/math?math=d^{2}=\dfrac{(x^{T}Cx)^{2}}{4((Cx)^{2}_{1}+(Cx)^{2}_{2})}=\dfrac{num}{denom}">   ( the <img src="https://render.githubusercontent.com/render/math?math=\Delta"> equation on top of p100 ). This Jacobian takes siginificantly more calculation then the Jacobian in approach 1. If you are not totally familiar with Matrix equation derviate rules (chain rules etc) my advise is to expand the equation to its original form -- an equation of scalar  <img src="https://render.githubusercontent.com/render/math?math=C_{11},  C_{12} , C_{13} , C_{21} , C_{22} ,C_{23}, C_{31}, C_{32}, C_{33},x',y',w'">   instead of vectors and matrices. we will use <img src="https://render.githubusercontent.com/render/math?math=num,denom"> to represent the numerator and denomenator of the <img src="https://render.githubusercontent.com/render/math?math=\Delta"> equation, respectively.
+
+Note that we are taking the derivative of a scalar <img src="https://render.githubusercontent.com/render/math?math=d^{2}"> over a vector <img src="https://render.githubusercontent.com/render/math?math=c">, the jacobian is therefore:
+
+<img src="https://render.githubusercontent.com/render/math?math=J=[\dfrac{\partial d^{2}}{\partial C_{11}},\dfrac{\partial d^{2}}{\partial C_{12}},\dfrac{\partial d^{2}}{\partial C_{13}},\dfrac{\partial d^{2}}{\partial C_{21}},\dfrac{\partial d^{2}}{\partial C_{22}},\dfrac{\partial d^{2}}{\partial C_{23}},\dfrac{\partial d^{2}}{\partial C_{31}},\dfrac{\partial d^{2}}{\partial C_{32}},\dfrac{\partial d^{2}}{\partial C_{33}}]">
+
+Expand each term we can get, (note:<img src="https://render.githubusercontent.com/render/math?math=\oplus"> here is the simple arithmatic +, i can't get it to display in github's ghetto Latex Equation):
+
+<img src="https://render.githubusercontent.com/render/math?math=num=(x'x'C_{11} \oplus x'y'C_{12} \oplus x'z'C_{13} \oplus y'x'C_{21} \oplus y'y'C_{22} \oplus y'z'C_{23} \oplus z'x'C_{31} \oplus z'y'C_{32} \oplus z'z'C_{33})^{2}">
+
+<img src="https://render.githubusercontent.com/render/math?math=denom=4(x'C_{11} \oplus y'C_{12} \oplus z'C_{13})^{2} \oplus 4(x'C_{21} \oplus y'C_{22} \oplus z'C_{23})^{2} ">
+
+then the rest is the familiar scalar equation derivative quotient rules/ chains rules, for example:
+
+<img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial num}{\partial C_{11}}">
+
+
 
 
 
