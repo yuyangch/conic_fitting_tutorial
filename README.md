@@ -63,7 +63,16 @@ Expand each term we can get, (note:<img src="https://render.githubusercontent.co
 
 then the rest is the familiar scalar equation derivative quotient rules/ chains rules, for example:
 
-<img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial num}{\partial C_{11}}">
+<img src="https://render.githubusercontent.com/render/math?math=num'=\dfrac{\partial num}{\partial C_{11}}=2x'x'(x'x'C_{11} \oplus x'y'C_{12} \oplus x'z'C_{13} \oplus y'x'C_{21} \oplus y'y'C_{22} \oplus y'z'C_{23} \oplus z'x'C_{31} \oplus z'y'C_{32} \oplus z'z'C_{33})">
+
+<img src="https://render.githubusercontent.com/render/math?math=denom'=\dfrac{\partial denom}{\partial C_{11}} =8x'(x'C_{11} \oplus y'C_{12} \oplus z'C_{13}) ">
+...
+<img src="https://render.githubusercontent.com/render/math?math=denom'=\dfrac{\partial denom}{\partial C_{21}} =8x'(x'C_{21} \oplus y'C_{22} \oplus z'C_{23}) ">
+...
+
+then (for example when calculating <img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial d^{2}}{\partial C_{11}} ">)
+
+<img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial \dfrac{num}{denom}}{\partial C_{11}}=denom'=\dfrac{\partial denom}{\partial C_{21}} =8x'(x'C_{21} \oplus y'C_{22} \oplus z'C_{23}) ">
 
 
 
