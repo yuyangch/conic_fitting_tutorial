@@ -74,6 +74,27 @@ then (for example when calculating <img src="https://render.githubusercontent.co
 
 <img src="https://render.githubusercontent.com/render/math?math=\dfrac{\partial \dfrac{num}{denom}}{\partial C_{11}}= \dfrac{denom \times num'-num\times denom'}{denom^{2}} ">
 
+Note: for n data points, the sampson error is defined by (4.13-p99), so for each data point, a J can be calculate, then at the end sum all the J vector together into a single 1x9 vector.
+
+
+
+After <img src="https://render.githubusercontent.com/render/math?math=J"> is calculated one can use the same equation (4.11-p99) to calculate <img src="https://render.githubusercontent.com/render/math?math=\delta_{c}=-J^{T}(JJ^{T})^{-1}\epsilon">  where <img src="https://render.githubusercontent.com/render/math?math=\epsilon=x^{T}Cx"> 
+
+At the end of each iteration simply calculate a new <img src="https://render.githubusercontent.com/render/math?math=c= \delta_{c} \oplus  c">
+
+the script fit_conic_sampson.py starts from a unit circle and points belong to a circle with radius 2, you can take a look at the resulting c vector. (note that one of the point(1.414,1.414,1)) is slightly off the circle because 1.414 is slightly off of square root of 2 which is 
+~1.41421356237.. the <img src="https://render.githubusercontent.com/render/math?math=\epsilon=x^{T}Cx"> with this point is printed as variable "error" at the end, for a comparison later with 1st approach approach.
+
+
+The physical meaning behind this approach can be understood as minimizing,over <img src="https://render.githubusercontent.com/render/math?math=C">, the geometric distance between all <img src="https://render.githubusercontent.com/render/math?math=x"> and <img src="https://render.githubusercontent.com/render/math?math=\hat{x}">  pairs.
+
+
+
+# Comparison Between 2 Aprroaches
+
+You can twerk the iteration count and see for yourself that, when the iteration count increases, the the #2 -sampson error approach converge to a solution with much smaller error variable.
+
+
 
 
 
