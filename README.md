@@ -1,6 +1,6 @@
 # conic_fitting_tutorial
 In Chapter 4 of the book Multiple View Geometry by Richard Hartley there is an conic fitting example (Example 4.2-p99)
-Where the Sampson Error is derived. However the book did not go into detail of how to iterate over the parameters of the conic. In order to arrive at the fitted conic, This tutorial explore two approaches. Also it briefly covers how to iterate over data points to find  <img src="https://render.githubusercontent.com/render/math?math=\hat{x}"> the closest point on conic <img src="https://render.githubusercontent.com/render/math?math=C"> to the measure point <img src="https://render.githubusercontent.com/render/math?math=x">
+Where the Sampson Error is derived. However the book did not go into great detail of how to iterate over the parameters of the conic,presumably becasue the problem is considered somewhat easy. In order to arrive at the fitted conic, This tutorial explore two approaches. Also it briefly covers how to iterate over data points to find  <img src="https://render.githubusercontent.com/render/math?math=\hat{x}"> the closest point on conic <img src="https://render.githubusercontent.com/render/math?math=C"> to the measure point <img src="https://render.githubusercontent.com/render/math?math=x">
 
 Before starting note the notation: 
 
@@ -92,7 +92,7 @@ The physical meaning behind this approach can be understood as minimizing,over <
 
 # Comparison Between 2 Aprroaches
 
-You can twerk the iteration count and see for yourself that, when the iteration count increases, the the #2 -sampson error approach converge to a solution with much smaller error variable.
+You can twerk the iteration count and see for yourself that, when the iteration count increases, the the #2 -sampson error approach converge to a solution with much smaller error variable <img src="https://render.githubusercontent.com/render/math?math=\epsilon=x^{T}Cx"> 
 
 
 
