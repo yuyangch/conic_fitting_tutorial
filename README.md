@@ -24,6 +24,9 @@ feel free to try other conic/points
 
 
 
+
+
+
 # Approach 1 Iteration Using the Original Error Function <img src="https://render.githubusercontent.com/render/math?math=x^{T}Cx">
 The goal here is to iterate over parameters of  <img src="https://render.githubusercontent.com/render/math?math=C"> instead of <img src="https://render.githubusercontent.com/render/math?math=x">. The calculation of <img src="https://render.githubusercontent.com/render/math?math=\delta_{x}">  is the same as (4.11)-p99, therefore a Jacobian over parameters of <img src="https://render.githubusercontent.com/render/math?math=C"> is needed
 
@@ -35,6 +38,10 @@ At the end of each iteration simply calculate a new <img src="https://render.git
 
 Note:<img src="https://render.githubusercontent.com/render/math?math=\epsilon">is a nx1 vector, each element correspond the a point <img src="https://render.githubusercontent.com/render/math?math=x"> residual, so <img src="https://render.githubusercontent.com/render/math?math=\epsilon=x^{T}Cx">
 
+the script fit_conic.py starts from a unit circle and points belong to a circle with radius 2, you can take a look at the resulting c vector. (note that one of the point(1.414,1.414,1)) is slightly off the circle because 1.414 is slightly off of square root of 2 which is 
+~1.41421356237.. the <img src="https://render.githubusercontent.com/render/math?math=\epsilon=x^{T}Cx"> with this point is printed as variable "error" at the end, for a comparison later with 2nd approach.
 
 
+
+# Approach 2 Iteration Using the Sampson Error Function <img src="https://render.githubusercontent.com/render/math?math=\epsilon^{T}(JJ^{T})^{-1}\epsilon">  (4.12-p99)
 
