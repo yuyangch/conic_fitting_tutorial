@@ -42,6 +42,15 @@ the script fit_conic.py starts from a unit circle and points belong to a circle 
 ~1.41421356237.. the <img src="https://render.githubusercontent.com/render/math?math=\epsilon=x^{T}Cx"> with this point is printed as variable "error" at the end, for a comparison later with 2nd approach.
 
 
+The physical meaning behind this approach can be understood as minimizing,over <img src="https://render.githubusercontent.com/render/math?math=C">, the residual of <img src="https://render.githubusercontent.com/render/math?math=x^{T}Cx">
+
 
 # Approach 2 Iteration Using the Sampson Error Function <img src="https://render.githubusercontent.com/render/math?math=\epsilon^{T}(JJ^{T})^{-1}\epsilon">  (4.12-p99)
+
+This is similar to Approach 1, but we are taking a different Error Function. 
+
+We need to first find the Jacobian of (4.12), or in this conic example, the equation on top of p100 <img src="https://render.githubusercontent.com/render/math?math=\dfrac{a}{b}">, over vector <img src="https://render.githubusercontent.com/render/math?math=c">, this is siginificantly more calculation then approach 1. If you are not totally familar with Matrix equation derviate rules (chain rules etc) my advise is to expand the equation to its original form -- an equation of scalar  <img src="https://render.githubusercontent.com/render/math?math=C_{11},  C_{12} , C_{13} , C_{21} , C_{22} ,C_{23}, C_{31}, C_{32}, C_{33},x',y',w'">   instead of vectors and matrices
+
+
+
 
