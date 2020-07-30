@@ -49,7 +49,7 @@ The physical meaning behind this approach can be understood as minimizing,over <
 
 This is similar to Approach 1, but we are taking a different Error Function. 
 
-We need to first find the Jacobian of (4.12), or in this conic example, the equation on top of p100 , (4.12) is <img src="https://render.githubusercontent.com/render/math?math=\dfrac{(x^{T}Cx)^{2}}{4((Cx)^{2}_{1}+(Cx)^{2}_{2})}">, over vector <img src="https://render.githubusercontent.com/render/math?math=c">, this is siginificantly more calculation then approach 1. If you are not totally familar with Matrix equation derviate rules (chain rules etc) my advise is to expand the equation to its original form -- an equation of scalar  <img src="https://render.githubusercontent.com/render/math?math=C_{11},  C_{12} , C_{13} , C_{21} , C_{22} ,C_{23}, C_{31}, C_{32}, C_{33},x',y',w'">   instead of vectors and matrices
+We need to first find the Jacobian of (4.12) (over vector <img src="https://render.githubusercontent.com/render/math?math=c">), or in this conic example, (4.12) is <img src="https://render.githubusercontent.com/render/math?math=\dfrac{(x^{T}Cx)^{2}}{4((Cx)^{2}_{1}+(Cx)^{2}_{2})}=\dfrac{num}{denom}">   ( the <img src="https://render.githubusercontent.com/render/math?math=\Delta"> equation on top of p100 ),  this is siginificantly more calculation then approach 1. If you are not totally familiar with Matrix equation derviate rules (chain rules etc) my advise is to expand the equation to its original form -- an equation of scalar  <img src="https://render.githubusercontent.com/render/math?math=C_{11},  C_{12} , C_{13} , C_{21} , C_{22} ,C_{23}, C_{31}, C_{32}, C_{33},x',y',w'">   instead of vectors and matrices
 
 
 
