@@ -91,7 +91,7 @@ the script fit_conic_sampson.py starts from a unit circle and points belong to a
 
 The physical meaning behind this approach can be understood as minimizing,over <img src="https://render.githubusercontent.com/render/math?math=C">, the geometric distance between all <img src="https://render.githubusercontent.com/render/math?math=x"> and <img src="https://render.githubusercontent.com/render/math?math=\hat{x}">  pairs.
 
-
+The image shown above is the result of this approach with 8 iterations.
 
 # Comparison Between 2 Aprroaches
 
