@@ -1,4 +1,7 @@
+<img src="./demo.png">
+
 # conic_fitting_tutorial
+
 In Chapter 4 of the book Multiple View Geometry by Richard Hartley there is an conic fitting example (Example 4.2-p99)
 Where the Sampson Error is derived. However the book did not go into great detail of how to iterate over the parameters of the conic,presumably becasue the problem is considered somewhat easy. In order to arrive at the fitted conic, This tutorial explore two approaches. Also it briefly covers how to iterate over data points to find  <img src="https://render.githubusercontent.com/render/math?math=\hat{x}"> the closest point on conic <img src="https://render.githubusercontent.com/render/math?math=C"> to the measure point <img src="https://render.githubusercontent.com/render/math?math=x">
 
