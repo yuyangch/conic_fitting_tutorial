@@ -34,7 +34,7 @@ C_initial_9=np.matrix([[1.0],
 		     [0.0],
 		     [-1.0]		
 			])
-for iterations in range(0,8):
+for iterations in range(0,25):
 	C_collections.append(deepcopy(C_initial_9))
 	J=[0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0]
 	e=0
@@ -87,7 +87,8 @@ for iterations in range(0,8):
 
 	#delta_c=
 
-	delta_c=(-1.0)*J.transpose()*linalg.inv(J*J.transpose())*e    #(4.11-p99) in M.G
+	delta_c=(-0.25)*J.transpose()*linalg.inv(J*J.transpose())*e    #(4.11-p99) in M.G
+
 	#delta_c1=(-1.0)*linalg.inv(J*J.transpose())*J.transpose()*e
 
 	#print delta_c

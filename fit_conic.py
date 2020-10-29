@@ -69,7 +69,7 @@ print C_initial_9
 for i in range(0,2000):
 	e=J*C_initial_9
 	print "e",e
-	delta_c=(-1.0)*J.transpose()*linalg.inv(J*J.transpose())*e    #(4.11-p99) in M.G
+	delta_c=(-0.05)*J.transpose()*linalg.inv(J*J.transpose())*e    #(4.11-p99) in M.G
 
 	#delta_c1=(-1.0)*linalg.inv(J.transpose()*J)*J.transpose()*e
 	print "delta_c",delta_c
